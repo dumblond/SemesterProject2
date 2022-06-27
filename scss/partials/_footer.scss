@@ -1,0 +1,22 @@
+footer {
+  background-color: $light;
+  padding: 1rem 0;
+
+  & .container {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 992px) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  & a {
+    color: $dark;
+  }
+
+  & .fa-brands {
+    font-size: 2rem;
+  }
+}

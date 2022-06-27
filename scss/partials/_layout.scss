@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+}
+
+.carousel-inner {
+  max-height: 360px;
+}
+
+.card-img-top {
+  height: 20vw;
+  object-fit: cover;
+}
