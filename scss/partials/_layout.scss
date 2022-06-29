@@ -17,6 +17,17 @@ body {
 }
 
 .card-img-top {
-  height: 20vw;
   object-fit: cover;
+  height: 50vw;
+}
+
+a {
+  color: $dark;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .card-img-top {
+    height: 20vw;
+  }
 }

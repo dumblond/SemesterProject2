@@ -12,7 +12,10 @@ export default function searchProducts(data) {
         return data;
       }
 
-      if (item.title.toLowerCase().startsWith(searchValue)) {
+      if (
+        item.title.toLowerCase().includes(searchValue) ||
+        item.description.toLowerCase().includes(searchValue)
+      ) {
         return true;
       }
     });

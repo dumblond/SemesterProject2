@@ -6,9 +6,9 @@ export default function deleteButton(items) {
   if (items === 0) {
     deleteAllBtn.style.display = "none";
   }
-  deleteAllBtn.addEventListener("click", deleteFeatured);
+  deleteAllBtn.addEventListener("click", deleteCart);
 
-  function deleteFeatured() {
+  function deleteCart() {
     if (confirm("Are you really sure?")) {
       localStorage.clear();
       deleteAllBtn.style.display = "none";

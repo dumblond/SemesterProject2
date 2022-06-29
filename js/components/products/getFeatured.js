@@ -6,11 +6,15 @@ export default function (data) {
   const element = document.querySelector(".products-container");
   element.innerHTML = ``;
 
+  const featuredProducts = data.filter(function (product) {
+    return product.featured === true;
+  });
+
   if (data.length === 0) {
     displayMessage("warning", EMPTY_FILTER_RESULTS, ".products-container");
   }
 
-  data.forEach((products) => {
+  featuredProducts.forEach((products) => {
     element.innerHTML += `
         <div class="col">
             <div class="card mb-3">

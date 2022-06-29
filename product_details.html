@@ -49,7 +49,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="products.html">Products</a>
+                  <a class="nav-link active" href="products.html">Products</a>
                 </li>
                 <li class="nav-item">
                   <a href="cart.html" class="nav-link">
@@ -58,7 +58,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="login.html" class="nav-link active">Login</a>
+                  <a href="login.html" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -88,21 +88,11 @@
       </header>
 
       <main>
-        <div class="container">
-          <div class="col-6 offset-3 mt-4">
-            <form>
-              <div class="message-container"></div>
-              <div class="mb-3">
-                <label for="username" class="form-label">Username/email</label>
-                <input type="text" class="form-control" id="username" />
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" />
-              </div>
-
-              <button type="submit" class="btn btn-dark">Log in</button>
-            </form>
+        <div class="container mt-4">
+          <div class="productDetail-container row row-cols-1 row-cols-md-2">
+            <div class="spinner-border m-5" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
           </div>
         </div>
       </main>
@@ -120,6 +110,6 @@
     </footer>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/login.js" type="module"></script>
+    <script src="js/productDetails.js" type="module"></script>
   </body>
 </html>

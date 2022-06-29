@@ -13,6 +13,7 @@ async function fetchProducts() {
     getProducts(item);
     searchProducts(item);
   } catch (error) {
+    console.log(error);
     displayMessage("danger", "Sorry, something is wrong!", container);
   }
 }
