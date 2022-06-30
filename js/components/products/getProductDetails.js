@@ -92,7 +92,7 @@ export default function (data) {
       currentCart.push(event.target.dataset);
       saveCart(currentCart);
 
-      displayMessage("success", "Item put in cart", ".productDetail-container");
+      location.href = "cart.html";
     }
   });
 

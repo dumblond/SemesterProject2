@@ -11933,6 +11933,13 @@ body {
   height: 50vw;
 }
 
+.img-fluid {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 30vw;
+  width: 30vw;
+}
+
 a {
   color: #1a3540;
   text-decoration: none;
@@ -11941,6 +11948,13 @@ a {
 @media (min-width: 768px) {
   .card-img-top {
     height: 20vw;
+  }
+
+  .img-fluid {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 10vw;
+    width: 10vw;
   }
 }
 h1, .h1,
