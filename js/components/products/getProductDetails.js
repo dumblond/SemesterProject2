@@ -31,17 +31,18 @@ export default function (data) {
           <div class="col-md-8">
             <img src="${
               baseUrl + data.image.formats.large.url
-            }" class="img-fluid rounded-start" alt="${data.image.alternativeText}">
+            }" class="img-fluid rounded-start" alt="${
+    data.image.alternativeText
+  }">
           </div>
           <div class="col-md-4">
             <div class="card-body">
               <h5 class="card-title">${data.title}</h5>
               <p class="card-text">Price: ${data.price}</p>
               <p class="card-text">${data.description}</p>
-                <form class="row g-3" id="form-size">
-                  <div id="form-result"></div>
-                    <label for="ShoeSize" class="form-label"></label>
-                    <select class="form-select" id="ShoeSize" required>
+                <form class="row g-3">
+                    <label for="shoe-size" class="form-label"></label>
+                    <select class="form-select" id="shoe-size" required>
                       <option selected disabled value="">Select size</option>
                       <option value="36">36</option>
                       <option value="37">37</option>
@@ -53,7 +54,6 @@ export default function (data) {
                       <option value="43">43</option>
                       <option value="44">44</option>
                     </select>
-                  <div class="form-error" id="size-error">Please enter a valid size</div>
                     <button 
                       class="btn btn-primary" 
                       id="cart-button" 
@@ -70,6 +70,7 @@ export default function (data) {
       </div>`;
 
   const cartButton = document.querySelector("#cart-button");
+  const shoeSize = document.querySelector("#shoe-size");
 
   cartButton.addEventListener("click", function (event) {
     event.preventDefault();
@@ -83,11 +84,15 @@ export default function (data) {
     });
 
     if (!inCart) {
+      if (shoeSize.value === "") {
+        return alert("Select a size!");
+      }
+      console.log(shoeSize.value);
+
       currentCart.push(event.target.dataset);
       saveCart(currentCart);
 
       displayMessage("success", "Item put in cart", ".productDetail-container");
- 
     }
   });
 
