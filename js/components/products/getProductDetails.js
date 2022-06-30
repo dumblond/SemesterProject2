@@ -25,46 +25,49 @@ export default function (data) {
               </li>
             </ol>
           </nav>
-      
+      </div>
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-8">
             <img src="${
               baseUrl + data.image.formats.large.url
-            }" class="img-fluid rounded-start" alt="${
-    data.image.alternativeText
-  }">
+            }" class="img-fluid rounded-start" alt="${data.image.alternativeText}">
           </div>
           <div class="col-md-4">
             <div class="card-body">
               <h5 class="card-title">${data.title}</h5>
               <p class="card-text">Price: ${data.price}</p>
               <p class="card-text">${data.description}</p>
-
-              <form class="row g-3">
-                <label for="validationDefault" class="form-label"></label>
-                <select class="form-select" id="validationDefault" required>
-                    <option selected disabled value="">Select size</option>
-                    <option value="36">36</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                </select>
-                <button 
-                  class="btn btn-primary" 
-                  id="cart-button" 
-                  type="button"
-                  data-id="${data.id}"
-                  data-title="${data.title}"
-                  data-price="${data.price}"
-                  >Put in cart</button>  
-              </form>
+                <form class="row g-3" id="form-size">
+                  <div id="form-result"></div>
+                    <label for="ShoeSize" class="form-label"></label>
+                    <select class="form-select" id="ShoeSize" required>
+                      <option selected disabled value="">Select size</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                    </select>
+                  <div class="form-error" id="size-error">Please enter a valid size</div>
+                    <button 
+                      class="btn btn-primary" 
+                      id="cart-button" 
+                      data-id="${data.id}"
+                      data-title="${data.title}"
+                      data-price="${data.price}"
+                      data-image="${baseUrl + data.image.formats.large.url}"
+                      data-alt="${data.image.alternativeText}"
+                    >Put in cart</button>  
+                </form>
             </div>
           </div>
         </div>
-      </div>
-
-            
-    </div>`;
+      </div>`;
 
   const cartButton = document.querySelector("#cart-button");
 
@@ -82,6 +85,9 @@ export default function (data) {
     if (!inCart) {
       currentCart.push(event.target.dataset);
       saveCart(currentCart);
+
+      displayMessage("success", "Item put in cart", ".productDetail-container");
+ 
     }
   });
 

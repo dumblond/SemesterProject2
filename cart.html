@@ -90,9 +90,21 @@
       <main>
         <div class="container">
           <h1>Cart</h1>
-          <div class="cart-container row row-cols-1 row-cols-md-3"></div>
-          <button type="button" class="btn btn-warning mb-4" id="deleteAll">
-            Clear favorites
+          <div class="col">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="products.html">Products</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Cart
+                </li>
+              </ol>
+            </nav>
+        </div>
+          <div class="products-container col"></div>
+          <button type="button" class="btn btn-primary mb-4" id="deleteAll">
+            Clear Shopping Cart
           </button>
         </div>
       </main>
