@@ -13,6 +13,8 @@ async function fetchProductsDetails() {
     const response = await fetch(baseUrl + "/products/" + params.get("id"));
     const item = await response.json();
 
+    document.title = item.title;
+
     getProductDetails(item);
   } catch (error) {
     console.log(error);

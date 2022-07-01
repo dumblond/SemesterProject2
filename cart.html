@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="shoeshop homepage" />
     <meta name="keywords" content="shoes, featured, products" />
-    <title>Shoeshop - home</title>
+    <title>Shoeshop - cart</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png" />
     <link
       rel="stylesheet"
@@ -101,7 +101,7 @@
             </nav>
           </div>
           <div class="products-container col"></div>
-          <button type="button" class="btn btn-primary mb-4" id="deleteAll">
+          <button type="button" class="btn btn-dark mb-4" id="deleteAll">
             Clear Shopping Cart
           </button>
         </div>
@@ -110,12 +110,28 @@
 
     <footer>
       <div class="footer container">
-        <a href="#" class="footer__link">shoeshop@email.com</a>
-        <div>
-          <i class="fa-brands fa-facebook-square"></i>
-          <i class="fa-brands fa-instagram-square"></i>
+        <div class="mb-4">
+          <a href="#" class="footer__link">shoeshop@email.com</a>
         </div>
-        <div class="footer__item">Copyright 2022</div>
+        <div class="mb-4">
+          <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+        </div>
+        <div class="newsletter column mb-4">
+          <form action="newsletter.html">
+            <div class="col mb-3 text-center">
+              <label for="e-mail">Get our newsletter</label>
+            </div>
+            <div class="col">
+              <input
+                type="email"
+                name="e-mail"
+                id="e-mail"
+                placeholder="example@email.com"
+              />
+            </div>
+          </form>
+        </div>
       </div>
     </footer>
 

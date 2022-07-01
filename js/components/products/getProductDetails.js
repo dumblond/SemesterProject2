@@ -83,17 +83,16 @@ export default function (data) {
       return cart.id === event.target.dataset.id;
     });
 
-    if (!inCart) {
-      if (shoeSize.value === "") {
-        return alert("Select a size!");
-      }
-      console.log(shoeSize.value);
-
-      currentCart.push(event.target.dataset);
-      saveCart(currentCart);
-
-      location.href = "cart.html";
+    if (shoeSize.value === "") {
+      return alert("Select a size!");
     }
+    event.target.dataset.shoeSize = shoeSize.value;
+    console.log(shoeSize.value);
+
+    currentCart.push(event.target.dataset);
+    saveCart(currentCart);
+
+    location.href = "cart.html";
   });
 
   function saveCart(items) {

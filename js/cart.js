@@ -20,19 +20,33 @@ cart.forEach((data) => {
   
     <div class="row g-0">
       <div class="col-4">
-        <img src="${data.image}"class="img-fluid rounded-start" alt="${data.alt}">
+        <img src="${data.image}" class="img-fluid rounded-start cart-img" alt="${data.alt}">
       </div>
       <div class="col-4">
         <div class="card-body">
           <a href="product_details.html?id=${data.id}" class="card-title mb-4">
           <h5>${data.title}</h5></a>
+          <p>Size: ${data.shoeSize}</p>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-3">
         <div class="card-body">
           <p class="card-text">Price: ${data.price}</p>
         </div>
       </div>
+      <div class="col-1">
+        <div class="card-body">
+          <i class="fa-solid fa-trash trash-can"></i>
+        </div>
+      </div>
     </div>
   </div>`;
+});
+
+const trashCan = document.querySelectorAll(".trash-can");
+
+trashCan.forEach((can) => {
+  can.addEventListener("click", function () {});
+
+  console.log(trashCan);
 });
