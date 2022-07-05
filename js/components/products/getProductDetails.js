@@ -1,7 +1,7 @@
 import displayMessage from "../common/displayMessage.js";
 import { EMPTY_FILTER_RESULTS } from "../../settings/emptyFilter.js";
 import { baseUrl } from "../../settings/api.js";
-import { getExistingCart } from "../utils/cartFunctions.js";
+import { getExistingCart, saveCart } from "../utils/cartFunctions.js";
 
 export default function (data) {
   const element = document.querySelector(".productDetail-container");
@@ -94,8 +94,4 @@ export default function (data) {
 
     location.href = "cart.html";
   });
-
-  function saveCart(items) {
-    localStorage.setItem("cart", JSON.stringify(items));
-  }
 }

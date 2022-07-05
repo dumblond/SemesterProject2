@@ -1,4 +1,4 @@
-import { getExistingCart } from "./components/utils/cartFunctions.js";
+import { getExistingCart, saveCart } from "./components/utils/cartFunctions.js";
 import deleteButton from "./components/buttons/deleteButton.js";
 import displayMessage from "./components/common/displayMessage.js";
 import { EMPTY_FILTER_RESULTS } from "./settings/emptyFilter.js";
@@ -7,14 +7,16 @@ const cart = getExistingCart();
 
 const cartContainer = document.querySelector(".products-container");
 
-if (cart.length === 0) {
-  displayMessage("warning", EMPTY_FILTER_RESULTS, ".products-container");
-}
+function showCart() {
+  cartContainer.innerHTML = "";
+  if (cart.length === 0) {
+    displayMessage("warning", EMPTY_FILTER_RESULTS, ".products-container");
+  }
 
-deleteButton(cart.length);
+  deleteButton(cart.length);
 
-cart.forEach((data) => {
-  cartContainer.innerHTML += `
+  cart.forEach((data, index) => {
+    cartContainer.innerHTML += `
   
   <div class="card mb-3">
   
@@ -36,17 +38,22 @@ cart.forEach((data) => {
       </div>
       <div class="col-1">
         <div class="card-body">
-          <i class="fa-solid fa-trash trash-can"></i>
+          <i class="fa-solid fa-trash trash-can" data-id="${index}"></i>
         </div>
       </div>
     </div>
   </div>`;
-});
+  });
+  const trashCan = document.querySelectorAll(".trash-can");
 
-const trashCan = document.querySelectorAll(".trash-can");
+  trashCan.forEach((can) => {
+    can.addEventListener("click", function () {
+      const cartProductId = can.dataset.id;
+      cart.splice(cartProductId, 1);
 
-trashCan.forEach((can) => {
-  can.addEventListener("click", function () {});
-
-  console.log(trashCan);
-});
+      saveCart(cart);
+      showCart();
+    });
+  });
+}
+showCart();
