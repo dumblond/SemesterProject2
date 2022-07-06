@@ -2,10 +2,15 @@ import { getExistingCart, saveCart } from "./components/utils/cartFunctions.js";
 import deleteButton from "./components/buttons/deleteButton.js";
 import displayMessage from "./components/common/displayMessage.js";
 import { EMPTY_FILTER_RESULTS } from "./settings/emptyFilter.js";
+import createMenu from "./components/common/createMenu.js";
+import createFooter from "./components/common/createFooter.js";
 
 const cart = getExistingCart();
 
 const cartContainer = document.querySelector(".products-container");
+
+createMenu();
+createFooter();
 
 function showCart() {
   cartContainer.innerHTML = "";

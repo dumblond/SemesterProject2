@@ -1,8 +1,13 @@
 import { baseUrl } from "./settings/api.js";
 import getProductDetails from "./components/products/getProductDetails.js";
 import displayMessage from "./components/common/displayMessage.js";
+import createMenu from "./components/common/createMenu.js";
+import createFooter from "./components/common/createFooter.js";
 
 const container = ".productDetail-container";
+
+createMenu();
+createFooter();
 
 const queryString = document.location.search;
 
