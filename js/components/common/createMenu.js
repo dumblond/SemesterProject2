@@ -71,10 +71,8 @@ export default function createMenu() {
               <span class="badge text-bg-secondary">1</span>
             </a>
           </li>
-          
            ${authLink}
           </li>
-          
         </ul>
       </div>
     </div>
