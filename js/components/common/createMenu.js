@@ -12,30 +12,32 @@ export default function createMenu() {
   } nav-link">Login</a>`;
 
   if (username) {
-    authLink = `<li class="nav-item dropdown">
-    <a
-      class="nav-link dropdown-toggle"
-      href="#"
-      id="navbarDropdownMenuLink"
-      role="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-    <span>${username}</span>
-    </a>
-    <ul
-      class="dropdown-menu"
-      aria-labelledby="navbarDropdownMenuLink"
-    >
-      <li>
-        <a class="dropdown-item" href="admin.html">Admin</a>
-      </li>
-      <li><a class="dropdown-item" href="#">Logout</a></li>
-    </ul>
-  </li>`;
+    authLink = `
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdownMenuLink"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <span>${username}</span>
+      </a>
+      <ul
+        class="dropdown-menu"
+        aria-labelledby="navbarDropdownMenuLink"
+      >
+        <li>
+          <a class="dropdown-item" href="admin.html">Admin</a>
+        </li>
+        <li><a class="dropdown-item" href="#">Logout</a></li>
+      </ul>
+    </li>`;
   }
 
-  container.innerHTML = `<nav class="navbar navbar-expand-lg bg-light">
+  container.innerHTML = `
+  <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
       <a class="navbar-brand nav__logo" href="index.html">ShoeShop</a>
       <button

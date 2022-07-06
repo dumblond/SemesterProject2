@@ -15,17 +15,15 @@ export default function (data) {
         <div class="col">
             <div class="card mb-3">
                 <div class="card-body products">
-                <a href="product_details.html?id=${products.id}"</a>
-                    <img class="card-img-top"  src="${
-                      baseUrl + products.image.formats.small.url
-                    }" alt="${
-                      products.image.alternativeText
-                    }">
-                    <h5 class="card-title mt-4">${products.title}</h5>
-                    <h6 class="card-subtitle mt-4 mb-4">Price: ${
-                      products.price
-                    }</h6>
-                    </div>
+                  <a href="product_details.html?id=${products.id}"</a>
+                  <img class="card-img-top"  src="${
+                    baseUrl + products.image.formats.small.url
+                  }" alt="${products.image.alternativeText}">
+                  <h5 class="card-title mt-4">${products.title}</h5>
+                  <h6 class="card-subtitle mt-4 mb-4">Price: ${
+                    products.price
+                  }</h6>
+                </div>
             </div>
         </div>`;
   });

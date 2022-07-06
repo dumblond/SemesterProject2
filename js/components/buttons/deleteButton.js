@@ -10,7 +10,7 @@ export default function deleteButton(items) {
 
   function deleteCart() {
     if (confirm("Are you really sure?")) {
-      localStorage.clear();
+      localStorage.removeItem("cart");
       deleteAllBtn.style.display = "none";
       getProducts([]);
     }

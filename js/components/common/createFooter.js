@@ -1,7 +1,8 @@
 export default function createFooter() {
   const container = document.querySelector(".footer-container");
 
-  container.innerHTML = ` <div class="footer container">
+  container.innerHTML = ` 
+  <div class="footer container">
     <div class="mb-4">
       <a href="#" class="footer__link">shoeshop@email.com</a>
     </div>

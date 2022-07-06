@@ -11,14 +11,15 @@ const cartContainer = document.querySelector(".products-container");
 
 createMenu();
 createFooter();
+showCart();
+
+deleteButton(cart.length);
 
 function showCart() {
   cartContainer.innerHTML = "";
   if (cart.length === 0) {
     displayMessage("warning", EMPTY_FILTER_RESULTS, ".products-container");
   }
-
-  deleteButton(cart.length);
 
   cart.forEach((data, index) => {
     cartContainer.innerHTML += `
@@ -49,6 +50,7 @@ function showCart() {
     </div>
   </div>`;
   });
+
   const trashCan = document.querySelectorAll(".trash-can");
 
   trashCan.forEach((can) => {
@@ -61,4 +63,3 @@ function showCart() {
     });
   });
 }
-showCart();
