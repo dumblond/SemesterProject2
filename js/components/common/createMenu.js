@@ -1,4 +1,5 @@
 import { getUsername } from "../utils/storage.js";
+import logoutAdmin from "./logoutAdmin.js";
 
 export default function createMenu() {
   const { pathname } = document.location;
@@ -31,7 +32,7 @@ export default function createMenu() {
         <li>
           <a class="dropdown-item" href="admin.html">Admin</a>
         </li>
-        <li><a class="dropdown-item" href="#">Logout</a></li>
+        <li><a class="dropdown-item" id="logout" href="/">Logout</a></li>
       </ul>
     </li>`;
   }
@@ -79,4 +80,6 @@ export default function createMenu() {
       </div>
     </div>
   </nav>`;
+
+  logoutAdmin();
 }
