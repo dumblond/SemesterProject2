@@ -12,7 +12,9 @@ export default function (data) {
   }
 
   console.log(data);
-
+  const image = data.image
+    ? baseUrl + data.image.formats.small.url
+    : data.image_url;
   element.innerHTML += `
         <div class="col">
           <nav aria-label="breadcrumb">
@@ -29,10 +31,8 @@ export default function (data) {
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-8">
-            <img src="${
-              baseUrl + data.image.formats.large.url
-            }" class="img-fluid rounded-start" alt="${
-    data.image.alternativeText
+            <img src="${image}" class="img-fluid rounded-start" alt="${
+    data.image ? data.image.alternativeText : ""
   }">
           </div>
           <div class="col-md-4">
@@ -60,8 +60,7 @@ export default function (data) {
                       data-id="${data.id}"
                       data-title="${data.title}"
                       data-price="${data.price}"
-                      data-image="${baseUrl + data.image.formats.large.url}"
-                      data-alt="${data.image.alternativeText}"
+                      data-image="${image}"
                     >Put in cart</button>  
                 </form>
             </div>

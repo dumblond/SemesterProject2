@@ -1,14 +1,14 @@
-import { clearStorage } from "../utils/storage.js";
+import { logout } from "../utils/storage.js";
 
 export default function logoutAdmin() {
-  const logout = document.querySelector("#logout");
+  const logoutButton = document.querySelector("#logout");
 
-  if (logout) {
-    logout.onclick = function () {
+  if (logoutButton) {
+    logoutButton.onclick = function () {
       const doLogout = confirm("Are you sure?");
 
       if (doLogout) {
-        clearStorage();
+        logout();
         location.href = "/";
       }
     };

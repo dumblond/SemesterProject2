@@ -55,7 +55,7 @@ async function attemptLogin(username, password) {
       saveToken(json.jwt);
       saveUser(json.user);
 
-      location.href = "/";
+      location.href = "admin.html";
     }
 
     if (json.error) {

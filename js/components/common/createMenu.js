@@ -8,9 +8,12 @@ export default function createMenu() {
 
   const username = getUsername();
 
-  let authLink = `<a href="login.html" class="${
+  let authLink = `
+  <li class="nav-item">
+  <a href="login.html" class="nav-link ${
     pathname === "/login.html" ? "active" : ""
-  } nav-link">Login</a>`;
+  } ">Login</a>
+  </li>`;
 
   if (username) {
     authLink = `

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="shoeshop homepage" />
+    <meta name="keywords" content="shoes, featured, products" />
+    <title>Shoeshop - login</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;700&family=Roboto+Slab&family=Source+Sans+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="menu-container"></div>
+      </header>
+
+      <main>
+        <div class="container">
+          <h1>Add new product</h1>
+          <div class="col">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="admin.html">Admin</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Add new product
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="col-6 offset-3 mt-4">
+            <form>
+              <div class="message-container"></div>
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" />
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  class="form-control"
+                  id="price"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="textarea" class="form-control" id="description" />
+              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">Image url</label>
+                <input type="text" class="form-control" id="image" />
+              </div>
+
+              <button type="submit" class="btn btn-dark">Add item</button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div class="footer-container"></div>
+    </footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/addProduct.js" type="module"></script>
+  </body>
+</html>
