@@ -30,15 +30,18 @@ const message = document.querySelector(".message-container");
   try {
     const response = await fetch(productUrl);
     const details = await response.json();
+    console.log(details);
+
+    const imageText = details.image
+      ? baseUrl + details.image.formats.small.url
+      : details.image_url;
 
     title.value = details.title;
     price.value = details.price;
     description.value = details.description;
-    image.value = details.image;
-    featured.value = details.featured;
+    image.value = imageText;
+    featured.checked = details.featured;
     idInput.value = details.id;
-
-    console.log(details);
   } catch (error) {
     console.log(error);
   } finally {
@@ -57,7 +60,7 @@ function submitFormEdit(event) {
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
   const imageValue = image.value.trim();
-  const featuredValue = featured.value.trim();
+  const featuredValue = featured.checked;
   const idValue = idInput.value;
 
   if (
@@ -90,6 +93,7 @@ async function updateProduct(title, price, description, image, featured, id) {
     price: price,
     description: description,
     image_url: image,
+    featured: featured,
   });
 
   const token = getToken();
