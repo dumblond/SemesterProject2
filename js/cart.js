@@ -62,4 +62,15 @@ function showCart() {
       showCart();
     });
   });
+  const cartPrice = getExistingCart();
+
+  function totalPrice() {
+    const initialValue = 0;
+    const sumWithInitial = cartPrice.reduce(
+      (previousValue, currentValue) => previousValue + currentValue.price,
+      initialValue
+    );
+    console.log(sumWithInitial);
+  }
+  totalPrice();
 }
