@@ -23,9 +23,8 @@ function showCart() {
 
   cart.forEach((data, index) => {
     cartContainer.innerHTML += `
-  
+
   <div class="card mb-3">
-  
     <div class="row g-0">
       <div class="col-4">
         <img src="${data.image}" class="img-fluid rounded-start cart-img" alt="${data.alt}">
@@ -47,8 +46,9 @@ function showCart() {
           <i class="fa-solid fa-trash trash-can" data-id="${index}"></i>
         </div>
       </div>
-    </div>
-  </div>`;
+    </div>  
+  </div>
+  `;
   });
 
   const trashCan = document.querySelectorAll(".trash-can");

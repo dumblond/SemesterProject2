@@ -1,5 +1,8 @@
 import { getUsername } from "../utils/storage.js";
 import logoutAdmin from "./logoutAdmin.js";
+import { getExistingCart } from "../utils/cartFunctions.js";
+
+const cart = getExistingCart();
 
 export default function createMenu() {
   const { pathname } = document.location;
@@ -74,7 +77,7 @@ export default function createMenu() {
               pathname === "/cart.html" ? "active" : ""
             } nav-link">
               <span>Cart</span>
-              <span class="badge text-bg-secondary">1</span>
+              <span class="badge text-bg-secondary">${cart.length}</span>
             </a>
           </li>
            ${authLink}
