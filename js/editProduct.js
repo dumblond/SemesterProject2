@@ -3,6 +3,7 @@ import displayMessage from "./components/common/displayMessage.js";
 import createMenu from "./components/common/createMenu.js";
 import createFooter from "./components/common/createFooter.js";
 import { getToken } from "./components/utils/storage.js";
+import deleteButtonAdmin from "./components/buttons/deleteButtonAdmin.js";
 
 createMenu();
 createFooter();
@@ -42,6 +43,8 @@ const message = document.querySelector(".message-container");
     image.value = imageText;
     featured.checked = details.featured;
     idInput.value = details.id;
+
+    deleteButtonAdmin(details.id);
   } catch (error) {
     console.log(error);
   } finally {
@@ -111,6 +114,14 @@ async function updateProduct(title, price, description, image, featured, id) {
     const response = await fetch(url, options);
     const json = await response.json();
     console.log(json);
+
+    if (json.updated_at) {
+      displayMessage("success", "Product is updated", ".message-container");
+    }
+
+    if (json.error) {
+      displayMessage("danger", json.message, ".message-container");
+    }
   } catch (error) {
     console.log(error);
   }
