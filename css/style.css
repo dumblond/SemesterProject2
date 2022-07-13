@@ -10937,9 +10937,7 @@ a {
     width: 10vw;
   }
 }
-h1, .h1,
-h2,
-.h2,
+h2, .h2,
 h3,
 .h3,
 h4,
@@ -10952,7 +10950,7 @@ h6,
 }
 
 h1, .h1 {
-  text-transform: uppercase;
+  font-family: "Source Sans Pro", sans-serif;
   margin-top: 2%;
 }
 

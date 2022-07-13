@@ -11,3 +11,11 @@ export function getExistingCart() {
 export function saveCart(items) {
   localStorage.setItem("cart", JSON.stringify(items));
 }
+
+export function getCartCount() {
+  const cart = localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart")).length
+    : 0;
+
+  return cart;
+}

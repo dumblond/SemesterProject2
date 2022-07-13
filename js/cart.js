@@ -1,4 +1,8 @@
-import { getExistingCart, saveCart } from "./components/utils/cartFunctions.js";
+import {
+  getCartCount,
+  getExistingCart,
+  saveCart,
+} from "./components/utils/cartFunctions.js";
 import deleteButton from "./components/buttons/deleteButton.js";
 import displayMessage from "./components/common/displayMessage.js";
 import { EMPTY_FILTER_RESULTS } from "./settings/emptyFilter.js";
@@ -9,13 +13,15 @@ const cart = getExistingCart();
 
 const cartContainer = document.querySelector(".products-container");
 
+const totalPriceContainer = document.querySelector(".totalprice-container");
+
 createMenu();
 createFooter();
 showCart();
 
 deleteButton(cart.length);
 
-function showCart() {
+export function showCart() {
   cartContainer.innerHTML = "";
   if (cart.length === 0) {
     displayMessage("warning", EMPTY_FILTER_RESULTS, ".products-container");
@@ -58,19 +64,33 @@ function showCart() {
       const cartProductId = can.dataset.id;
       cart.splice(cartProductId, 1);
 
+      getCartCount();
       saveCart(cart);
       showCart();
     });
   });
+
   const cartPrice = getExistingCart();
 
   function totalPrice() {
     const initialValue = 0;
     const sumWithInitial = cartPrice.reduce(
-      (previousValue, currentValue) => previousValue + currentValue.price,
+      (previousValue, currentValue) =>
+        previousValue + parseFloat(currentValue.price),
       initialValue
     );
     console.log(sumWithInitial);
+
+    return sumWithInitial;
   }
-  totalPrice();
+
+  if (cartPrice.length > 0) {
+    totalPriceContainer.innerHTML = `
+    <div class="card mb-3">
+      <p class="m-3 text-end">Total price: ${totalPrice()}</p>
+    </div>`;
+  } else {
+    totalPriceContainer.innerHTML = "";
+  }
+  createMenu();
 }
