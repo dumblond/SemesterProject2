@@ -78,15 +78,10 @@ export default function (data) {
 
     const currentCart = getExistingCart();
 
-    const inCart = currentCart.find((cart) => {
-      return cart.id === event.target.dataset.id;
-    });
-
     if (shoeSize.value === "") {
       return alert("Select a size!");
     }
     event.target.dataset.shoeSize = shoeSize.value;
-    console.log(shoeSize.value);
 
     currentCart.push(event.target.dataset);
     saveCart(currentCart);

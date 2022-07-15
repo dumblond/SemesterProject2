@@ -76,8 +76,6 @@ async function addProduct(title, price, description, image) {
     if (json.error) {
       displayMessage("danger", json.message, ".message-container");
     }
-
-    console.log(json);
   } catch (error) {
     console.log(error);
     displayMessage("warning", "Something is wrong", ".message-container");

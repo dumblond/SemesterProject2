@@ -49,7 +49,6 @@ async function attemptLogin(username, password) {
   try {
     const response = await fetch(url, options);
     const json = await response.json();
-    console.log(json);
 
     if (json.user) {
       saveToken(json.jwt);

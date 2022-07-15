@@ -27,7 +27,7 @@ export default function createMenu() {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <span>${username}</span>
+        <span>Hi ${username}</span>
       </a>
       <ul
         class="dropdown-menu"

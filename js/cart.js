@@ -32,7 +32,7 @@ export function showCart() {
 
   <div class="card mb-3">
     <div class="row g-0">
-      <div class="col-4">
+      <div class="col-3">
         <img src="${data.image}" class="img-fluid rounded-start cart-img" alt="${data.alt}">
       </div>
       <div class="col-4">
@@ -42,14 +42,14 @@ export function showCart() {
           <p>Size: ${data.shoeSize}</p>
         </div>
       </div>
+      <div class="col-2">
+        <div class="card-body">
+          <i class="fa-solid fa-trash trash-can" data-id="${index}"></i>
+        </div>
+      </div>
       <div class="col-3">
         <div class="card-body">
           <p class="card-text">Price: ${data.price}</p>
-        </div>
-      </div>
-      <div class="col-1">
-        <div class="card-body">
-          <i class="fa-solid fa-trash trash-can" data-id="${index}"></i>
         </div>
       </div>
     </div>  
@@ -74,14 +74,13 @@ export function showCart() {
 
   function totalPrice() {
     const initialValue = 0;
-    const sumWithInitial = cartPrice.reduce(
+    const sumCart = cartPrice.reduce(
       (previousValue, currentValue) =>
         previousValue + parseFloat(currentValue.price),
       initialValue
     );
-    console.log(sumWithInitial);
 
-    return sumWithInitial;
+    return parseFloat(sumCart).toFixed(2);
   }
 
   if (cartPrice.length > 0) {

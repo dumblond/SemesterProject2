@@ -5,10 +5,7 @@ export default function deleteButtonAdmin(id) {
   const button = document.querySelector("#deleteItemAdmin");
 
   button.onclick = async function () {
-    console.log(id);
-
     const doDelete = confirm("Are you sure you want to delete this item?");
-    console.log(doDelete);
 
     if (doDelete) {
       const url = baseUrl + "/products/" + id;

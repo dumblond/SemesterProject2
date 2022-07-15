@@ -11,7 +11,7 @@ export default function createFooter() {
       <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
     </div>
     <div class="newsletter column mb-4">
-      <form action="newsletter.html">
+      <form action="">
         <div class="col mb-3 text-center">
           <label for="e-mail">Get our newsletter</label>
         </div>
