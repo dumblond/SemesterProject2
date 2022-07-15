@@ -75,7 +75,7 @@ export default function createMenu() {
               pathname === "/cart.html" ? "active" : ""
             } nav-link">
               <span>Cart</span>
-              <span class="badge text-bg-secondary">${getCartCount()}</span>
+              <span class="badge text-bg-primary">${getCartCount()}</span>
             </a>
           </li>
            ${authLink}
