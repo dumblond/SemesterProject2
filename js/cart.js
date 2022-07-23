@@ -3,7 +3,7 @@ import {
   getExistingCart,
   saveCart,
 } from "./components/utils/cartFunctions.js";
-import deleteButton from "./components/buttons/deleteButton.js";
+import deleteAllCartButton from "./components/buttons/deleteAllCartButton.js";
 import displayMessage from "./components/common/displayMessage.js";
 import { EMPTY_FILTER_RESULTS } from "./settings/emptyFilter.js";
 import createMenu from "./components/common/createMenu.js";
@@ -19,7 +19,7 @@ createMenu();
 createFooter();
 showCart();
 
-deleteButton(cart.length);
+deleteAllCartButton(cart.length);
 
 export function showCart() {
   cartContainer.innerHTML = "";
