@@ -12,6 +12,7 @@ const title = document.querySelector("#title");
 const price = document.querySelector("#price");
 const description = document.querySelector("#description");
 const image = document.querySelector("#image");
+const featured = document.querySelector("#featured");
 const message = document.querySelector(".message-container");
 
 form.addEventListener("submit", addProductForm);
@@ -24,6 +25,7 @@ function addProductForm(event) {
   const titleValue = title.value.trim();
   const priceValue = parseFloat(price.value);
   const descriptionValue = description.value.trim();
+  const featuredValue = featured.checked;
   const imageValue = image.value.trim();
 
   if (
@@ -40,10 +42,16 @@ function addProductForm(event) {
     );
   }
 
-  addProduct(titleValue, priceValue, descriptionValue, imageValue);
+  addProduct(
+    titleValue,
+    priceValue,
+    descriptionValue,
+    featuredValue,
+    imageValue
+  );
 }
 
-async function addProduct(title, price, description, image) {
+async function addProduct(title, price, description, featured, image) {
   const url = baseUrl + "/products";
 
   const data = JSON.stringify({
@@ -51,6 +59,7 @@ async function addProduct(title, price, description, image) {
     price: price,
     description: description,
     image_url: image,
+    featured: featured,
   });
 
   const token = getToken();
