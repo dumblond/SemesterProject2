@@ -10999,4 +10999,6 @@ footer .fa-brands {
   background-size: cover;
   width: 100%;
   height: 400px;
+  display: grid;
+  place-items: end;
 }/*# sourceMappingURL=style.css.map */

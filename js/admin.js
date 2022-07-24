@@ -3,6 +3,11 @@ import getProductsToEdit from "./components/products/getProductsToEdit.js";
 import displayMessage from "./components/common/displayMessage.js";
 import createMenu from "./components/common/createMenu.js";
 import createFooter from "./components/common/createFooter.js";
+import { getToken } from "./components/utils/storage.js";
+
+if (getToken() === null) {
+  location.href = "login.html";
+}
 
 createMenu();
 createFooter();

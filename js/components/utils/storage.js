@@ -36,7 +36,10 @@ function getFromStorage(key) {
   const value = localStorage.getItem(key);
 
   if (!value) {
-    return [];
+    if (key === "cart") {
+      return [];
+    }
+    return null;
   }
 
   return JSON.parse(value);

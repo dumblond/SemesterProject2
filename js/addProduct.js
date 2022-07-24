@@ -4,6 +4,10 @@ import createFooter from "./components/common/createFooter.js";
 import { getToken } from "./components/utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 
+if (getToken() === null) {
+  location.href = "login.html";
+}
+
 createMenu();
 createFooter();
 

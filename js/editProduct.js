@@ -5,6 +5,10 @@ import createFooter from "./components/common/createFooter.js";
 import { getToken } from "./components/utils/storage.js";
 import deleteButtonAdmin from "./components/buttons/deleteButtonAdmin.js";
 
+if (getToken() === null) {
+  location.href = "login.html";
+}
+
 createMenu();
 createFooter();
 
