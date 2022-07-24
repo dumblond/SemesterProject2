@@ -16,9 +16,9 @@ export default function (data) {
       : products.image_url;
     element.innerHTML += `
         <div class="col">
-            <div class="card mb-3">
-                <div class="card-body products">
-                  <a href="product_edit.html?id=${products.id}"</a>  
+          <div class="card mb-3">
+              <div class="card-body products">
+                <a href="product_edit.html?id=${products.id}"> 
                   <h5 class="card-title mt-4">${products.title}</h5>
                   <h6 class="card-subtitle mt-4 mb-4">Price: ${
                     products.price
@@ -26,8 +26,9 @@ export default function (data) {
                   <img class="card-img-top" style="max-height: 100px;"  src="${image}" alt="${
       products.image ? products.image.alternativeText : ""
     }">
-                </div>
+              </a>
             </div>
+          </div>
         </div>`;
   });
 }

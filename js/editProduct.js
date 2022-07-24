@@ -35,7 +35,6 @@ const message = document.querySelector(".message-container");
   try {
     const response = await fetch(productUrl);
     const details = await response.json();
-    console.log(details);
 
     const imageText = details.image
       ? baseUrl + details.image.formats.small.url
@@ -50,7 +49,11 @@ const message = document.querySelector(".message-container");
 
     deleteButtonAdmin(details.id);
   } catch (error) {
-    console.log(error);
+    return displayMessage(
+      "danger",
+      "Something went wrong.",
+      ".message-container"
+    );
   } finally {
     form.style.display = "block";
   }
@@ -126,6 +129,10 @@ async function updateProduct(title, price, description, image, featured, id) {
       displayMessage("danger", json.message, ".message-container");
     }
   } catch (error) {
-    console.log(error);
+    return displayMessage(
+      "danger",
+      "Something went wrong.",
+      ".message-container"
+    );
   }
 }

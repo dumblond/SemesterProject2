@@ -11,22 +11,21 @@ export default function (data) {
     displayMessage("warning", EMPTY_FILTER_RESULTS, ".productDetail-container");
   }
 
-  console.log(data);
   const image = data.image
     ? baseUrl + data.image.formats.small.url
     : data.image_url;
   element.innerHTML += `
-        <div class="col">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="products.html">Products</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                ${data.title}
-              </li>
-            </ol>
-          </nav>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="products.html">Products</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              ${data.title}
+            </li>
+          </ol>
+        </nav>
       </div>
       <div class="card mb-3">
         <div class="row g-0">
@@ -73,8 +72,6 @@ export default function (data) {
 
   cartButton.addEventListener("click", function (event) {
     event.preventDefault();
-
-    console.log(event);
 
     const currentCart = getExistingCart();
 

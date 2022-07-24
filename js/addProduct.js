@@ -90,7 +90,6 @@ async function addProduct(title, price, description, featured, image) {
       displayMessage("danger", json.message, ".message-container");
     }
   } catch (error) {
-    console.log(error);
     displayMessage("warning", "Something is wrong", ".message-container");
   }
 }

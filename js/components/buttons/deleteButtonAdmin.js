@@ -1,4 +1,5 @@
 import { baseUrl } from "../../settings/api.js";
+import displayMessage from "../common/displayMessage.js";
 import { getToken } from "../utils/storage.js";
 
 export default function deleteButtonAdmin(id) {
@@ -19,14 +20,15 @@ export default function deleteButtonAdmin(id) {
         },
       };
       try {
-        const response = await fetch(url, options);
-        const json = await response.json();
+        await fetch(url, options);
 
         location.href = "admin.html";
-
-        console.log(json);
       } catch (error) {
-        console.log(error);
+        return displayMessage(
+          "danger",
+          "Something went wrong.",
+          ".message-container"
+        );
       }
     }
   };

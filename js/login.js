@@ -20,7 +20,7 @@ function submitForm(event) {
   message.innerHTML = "";
 
   const usernameValue = username.value.trim();
-  const passwordValue = password.value.trim();
+  const passwordValue = password.value;
 
   if (usernameValue.length === 0 || passwordValue.length === 0) {
     return displayMessage(
@@ -65,7 +65,6 @@ async function attemptLogin(username, password) {
       );
     }
   } catch (error) {
-    console.log(error);
     displayMessage("danger", "something went wrong", ".message-container");
   }
 }

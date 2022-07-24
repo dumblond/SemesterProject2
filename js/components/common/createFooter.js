@@ -1,5 +1,5 @@
 export default function createFooter() {
-  const container = document.querySelector(".footer-container");
+  const container = document.querySelector("footer");
 
   container.innerHTML = ` 
   <div class="footer container">

@@ -11,9 +11,9 @@ export default function createMenu() {
 
   let authLink = `
   <li class="nav-item">
-  <a href="login.html" class="nav-link ${
-    pathname === "/login.html" ? "active" : ""
-  } ">Login</a>
+    <a href="login.html" class="nav-link ${
+      pathname === "/login.html" ? "active" : ""
+    } ">Login</a>
   </li>`;
 
   if (username) {
@@ -27,7 +27,7 @@ export default function createMenu() {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <span>Hi ${username}</span>
+        <span>Hi, ${username}</span>
       </a>
       <ul
         class="dropdown-menu"
@@ -60,7 +60,7 @@ export default function createMenu() {
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a href="/" class="${
-              pathname === "/" ? "active" : ""
+              pathname === "/" || pathname === "/index.html" ? "active" : ""
             } nav-link" aria-current="page">
               Home
             </a>

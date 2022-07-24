@@ -22,7 +22,6 @@ async function fetchProductsDetails() {
 
     getProductDetails(item);
   } catch (error) {
-    console.log(error);
     displayMessage("danger", "Sorry, something is wrong!", container);
   }
 }

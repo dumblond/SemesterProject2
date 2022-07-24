@@ -3,7 +3,7 @@ import {
   getExistingCart,
   saveCart,
 } from "./components/utils/cartFunctions.js";
-import deleteAllCartButton from "./components/buttons/deleteAllCartButton.js";
+import deleteAllCartButton from "./components/buttons/deleteAllButtonCart.js";
 import displayMessage from "./components/common/displayMessage.js";
 import { EMPTY_FILTER_RESULTS } from "./settings/emptyFilter.js";
 import createMenu from "./components/common/createMenu.js";
@@ -29,31 +29,30 @@ export function showCart() {
 
   cart.forEach((data, index) => {
     cartContainer.innerHTML += `
-
-  <div class="card mb-3">
-    <div class="row g-0">
-      <div class="col-3">
-        <img src="${data.image}" class="img-fluid rounded-start cart-img" alt="${data.alt}">
-      </div>
-      <div class="col-4">
-        <div class="card-body">
-          <a href="product_details.html?id=${data.id}" class="card-title mb-4">
-          <h5>${data.title}</h5></a>
-          <p>Size: ${data.shoeSize}</p>
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-3">
+          <img src="${data.image}" class="img-fluid rounded-start cart-img" alt="${data.alt}">
         </div>
-      </div>
-      <div class="col-2">
-        <div class="card-body">
-          <i class="fa-solid fa-trash trash-can" data-id="${index}"></i>
+        <div class="col-4">
+          <div class="card-body">
+            <a href="product_details.html?id=${data.id}" class="card-title mb-4">
+            <h5>${data.title}</h5></a>
+            <p>Size: ${data.shoeSize}</p>
+          </div>
         </div>
-      </div>
-      <div class="col-3">
-        <div class="card-body">
-          <p class="card-text">Price: ${data.price}</p>
+        <div class="col-2">
+          <div class="card-body">
+            <i class="fa-solid fa-trash trash-can" data-id="${index}"></i>
+          </div>
         </div>
-      </div>
-    </div>  
-  </div>
+        <div class="col-3">
+          <div class="card-body">
+            <p class="card-text">Price: ${data.price}</p>
+          </div>
+        </div>
+      </div>  
+    </div>
   `;
   });
 
@@ -73,11 +72,9 @@ export function showCart() {
   const cartPrice = getExistingCart();
 
   function totalPrice() {
-    const initialValue = 0;
     const sumCart = cartPrice.reduce(
-      (previousValue, currentValue) =>
-        previousValue + parseFloat(currentValue.price),
-      initialValue
+      (previousValue, product) => previousValue + parseFloat(product.price),
+      0
     );
 
     return parseFloat(sumCart).toFixed(2);
