@@ -6,7 +6,7 @@ A shoe store online.
 
 ## Description
 
-The customer can do the shopping from the coach, and the store management can do the admininstration of the page. 
+The customer can do the shopping from the couch, and the store management can do the admininstration of the page. 
 
 The page have
 
