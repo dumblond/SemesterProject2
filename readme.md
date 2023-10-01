@@ -1,6 +1,6 @@
 # Shoeshop
 
-![image](https://nbdesign.no/images/store.png)
+![image](https://nbdesign.no/assets/store-ed6623ef.png)
 
 A shoe store online.
 
