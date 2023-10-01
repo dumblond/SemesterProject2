@@ -32,9 +32,28 @@ The page have
 git clone git@github.com:dumblond/SemesterProject2.git
 ```
 
+2. Clone strapi:
+
+```bash
+git clone git@github.com:NoroffFEU/strapi-sp2.git
+```
+### Running strapi
+
+```
+npm install
+```
+
+
 ### Running
 
+Start strapi
+```
+npm run develop
+```
+
 I recommend opening the project in visual studio code and using the extension [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to open and run the project
+
+
 
 
 ## Contributing
